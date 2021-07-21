@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+  <h1>DISH RECOMMENDER</h1>
+</br>
+
+  <form method="post" enctype="multipart/form-data" action="{% url 'recommend' %}">
+    {% csrf_token %}
+    <label for="img">Select image:</label>
+    <input type="file" id="img" name="img" accept="image/*">
+    <input type="submit" value="Recommend!">
+  </form>
+
+</body>
+</html>

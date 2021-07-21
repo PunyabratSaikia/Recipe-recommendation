@@ -1,0 +1,319 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62%;
+    
+}
+
+.navbar{
+    color: white;
+    font-size: 2rem;
+    font-family: 'Odibee Sans', cursive;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 7.5rem;
+    background-color: #1d3557;
+    box-shadow: 0 0 .2rem black;
+}
+
+.navbar div,ul{
+    margin: 0 1rem;
+}
+
+#check{
+    display: none;
+}
+
+nav ul li:hover{
+    background-color: orange;
+    border-radius: 10%;
+    box-shadow: 0 0 .5rem black;
+    transition: all 300ms linear;
+}
+
+.logo img{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    background-color: white;
+    border-radius: 0.2rem solid black;
+    box-shadow: 0 0 0.2rem black;
+}
+
+.navbar ul li{
+    margin: 0 0.2rem;
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+}
+
+.checkbtn{
+    position: absolute;
+    cursor: pointer;
+    right: 0.5rem;
+    top : 3rem; 
+    display: none;
+}
+
+
+.container{
+    font-weight: 600;
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    background-color: #bdb2ff;
+}
+
+form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+button
+{
+    border: none;
+    color: black;
+    background-color: wheat;
+    border: 0.1rem solid green;
+    padding: 0.5rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.4rem;
+    transition: 200ms linear;
+}
+
+  button{
+    transition-duration: 0.2s;
+  }
+  
+button:hover
+{
+    background-color: #4CAF50;
+    color: white;
+}
+
+input[type=file]::file-selector-button {
+    border: none;
+    color: black;
+    font-weight: 700;
+    background-color: wheat;
+    border: 0.1rem solid green;
+    padding: 0.5rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8rem;
+    transition: 200ms linear;
+  }
+
+  input[type=file]::file-selector-button:hover{
+      background-color: maroon;
+      border: 0.1rem solid black;
+      color: white;
+      transition: 200ms linear;
+  }
+
+
+
+.ingridients{
+    
+    border: 0.2rem solid black;
+    text-align: center;
+    width: 15%;
+    line-height: 4.5rem;
+    box-shadow: 0 0 0.2rem black;
+}
+
+.ingridients_items{
+    font-family: 'Viaoda Libre', cursive;
+    background-color: #e5e5e5;
+}
+
+.instructions_items{
+    font-family: 'Viaoda Libre', cursive;
+    padding: 1.2rem;
+    background-color: #e5e5e5;
+}
+
+input,label{
+    font-size: 100%;
+}
+
+.instructions{
+    border: 0.2rem solid black;
+    width: 35%;
+    line-height: 2.7rem;
+    font-size: 120%;
+    box-shadow: 0 0 0.2rem black;
+}
+
+.instructions_items,.ingridients_items{
+    border-bottom: 0.2rem solid black;
+}
+
+.Recommendation{
+    height: 100%;
+    padding: 3.5rem;
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.input_image{
+    background-color: #e5e5e5;
+    box-shadow: 0 0 0.2rem black;
+    border: 0.2rem solid black;
+    max-height: 100%;
+    max-width: 100%;
+    width: 20%;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#div1 img{
+    width: 100%;
+    box-shadow: 0 0 0.2rem black;
+}
+
+.recs{
+    background-color: #14213d;
+    max-width: 100%;
+    color: wheat;
+    margin-top: 0.3rem;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 0 0.5rem black;
+}
+
+figcaption{
+    text-align: center;
+}
+
+.scaled{
+    width: 100%;
+}
+
+
+#lightbox
+{
+    display: none;
+    position:fixed;
+    background-color:rgba(0,0,0,0.8);
+    z-index: 1000;
+    top:0;
+    height: 100%;
+    width: 100%;
+}
+
+#lightbox.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@media(max-width: 960px ){
+    input[type=file]::file-selector-button{
+        font-size: 0.5rem;
+    }
+   html {
+       font-size: 47%;
+   }
+   input,label{
+    font-size: 100%;
+}
+
+   .ingridients{
+    line-height: 3rem;
+}
+
+.instructions{
+    line-height: 1.7rem;
+    }
+}
+
+
+@media(max-width: 790px ){
+
+    html{
+        font-size: 30%;
+    }
+
+    input[type=file]::file-selector-button{
+        height: 1rem;
+        width: 1rem;
+        font-size: 0.6rem;
+    }
+
+    .ingridients{
+        line-height: 2rem;
+    }
+    
+    .instructions{
+        line-height: 1.3rem;
+        }
+
+    .logo img{
+       margin: 1rem;
+    }
+
+    input,label{
+        font-size: 100%;
+    }
+
+    .checkbtn{
+        display: inline;
+        top : 3.25rem;
+        right: 0rem;
+        margin-right: 1rem;
+    }
+
+    .navbar{
+        display: block;
+
+    }
+
+    .navbar ul{
+        background-color: orange;
+        text-shadow: 0 0 0.3rem black;
+        display: block;
+        position: absolute;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0.5rem;
+        height: 100vh;
+        left: 1000rem;
+        text-align: center;
+        transition: all 300ms ease-in;
+    }
+
+    .navbar ul li{
+        line-height: 12rem;
+    }
+
+    #check:checked ~ ul{
+        left: 0rem;
+      }
+}
+

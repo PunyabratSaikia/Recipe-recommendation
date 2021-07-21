@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% load static %}
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SidebarDesign</title>
+    <link rel="stylesheet" href="{% static 'nav1.css' %}">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5916fb42ce.js" crossorigin="anonymous"></script>
+
+	<!-- linking font awesome for icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style>
+		/* Whole html box designing */
+		html {
+			box-sizing: border-box;
+		}
+
+		.navbar{
+    		font-size: 1.5rem;
+		}
+
+		/* Body width fixing */
+		body {
+			max-width: 100%
+		}
+
+		/* Box sizing depending on parent */
+		*,
+		*:before,
+		*:after {
+			box-sizing: inherit;
+		}
+
+		/* Styling column */
+		.column {
+			float: left;
+			width: 33%;
+			margin-bottom: 16px;
+			padding: 10px 10px;
+		}
+
+
+		/* Column width change depends on screen size */
+		@media screen and (max-width: 670px) {
+			.column {
+				width: 100%;
+				text-align: none;
+			}
+		}
+
+		/* Card designing */
+		.card {
+			background-color: white;
+			border: 1px solid white;
+		}
+
+		.container {
+			padding: 0 16px;
+		}
+
+		/* Icon styling */
+		.fa {
+			margin: 10px;
+			font-size:68px;
+
+		}
+
+		.fa:hover {
+			transform: rotateY(180deg);
+			transition: transform 0.8s;
+		}
+
+		.container::after,
+		.row::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+
+		/* Button designing */
+		.button {
+			border: none;
+			padding: 8px;
+			color: white;
+			background-color: #449D44;
+			text-align: center;
+			cursor: pointer;
+			width: 100%;
+			margin-bottom: 10px;
+		}
+
+		/* Hover efect on button */
+		.button:hover {
+			background-color: green;
+		}
+
+		/* Margining first member of team */
+		#gfg {
+			float:none;
+			margin:auto;
+		}
+
+		a:link {
+  color: rgb(96, 41, 151);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(252, 250, 251);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+	</style>
+</head>
+
+<body style="background-color:#eee;">
+
+	<nav class="navbar">
+        <div class = "logo"><img src="https://upload.wikimedia.org/wikipedia/en/c/c6/NIT_Silchar_logo.png" alt=""></div>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+        <ul>
+            <li style = "color: white;"><a href = "{% url 'home' %}">Home</a></li>
+            <li>Research-Paper</li>
+            <li><a href = "{% url 'members' %}">Meet the team</a></li>
+        </ul>
+    </nav>
+		<!-- Other members of the team -->
+		<center>
+		<div class="row">
+      <div class="column">
+				<div class="card">
+					<img src="http://cs.nits.ac.in/wp-content/uploads/2015/03/partha.jpg" style="border-radius: 50%; height: 120px; width: 120px;">
+					<div class="container">
+						<h2>Dr. Partha Pakray</h2>
+						<p>Assistant Professor, NIT SILCHAR</p>
+						<p>Email : <a href="mailto:partha@cse.nits.ac.in?subject=feedback">partha@cse.nits.ac.in </a>
+						</p>
+						<button class="button">View</button>
+					</div>
+				</div>
+			</div>
+
+      <div class="column">
+				<div class="card">
+					<img src="https://media-exp1.licdn.com/dms/image/C5603AQE3ltzPSQWU_Q/profile-displayphoto-shrink_400_400/0/1597640691645?e=1629331200&v=beta&t=kkIchf2Ch_G4xbId54TZkr-xM0mzrjTqyg2IWrvAi9s" style="border-radius: 50%; height: 120px; width: 120px;">
+					<div class="container">
+						<h2>Abdullah Faiz Ur Rahman Khilji</h2>
+						<p>SDE, Amazon</p>
+						<p>Email : <a href="mailto:joe@example.com?subject=feedback">abdullah_ug@cse.nits.ac.in</a>
+						</p>
+						<button class="button">View</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="column">
+				<div class="card">
+					<img src="https://media-exp1.licdn.com/dms/image/C5103AQEqUFysD-LpQA/profile-displayphoto-shrink_400_400/0/1580588828307?e=1629331200&v=beta&t=1S_ZY4QSvmKa_UCAIu9oiE0afOUqmNSaTEkJP1y4bac" style="border-radius: 50%; height: 120px; width: 120px;">
+					<div class="container">
+						<h2>Punyabrat Saikia</h2>
+						<p>Final Year Undergraduate, Computer Science, NIT SILCHAR</p>
+						<p>Email : <a href="mailto:punyabrat_ug@cse.nits.ac.in?subject=feedback">punyabrat_ug@cse.nits.ac.in</a>
+						</p>
+						<button class="button">View</button>
+					</div>
+				</div>
+			</div>
+
+      <div class="column">
+				<div class="card">
+					<img src="{% static 'angshuman.jpg' %}" style="border-radius: 50%; height: 120px; width: 120px;">
+					<div class="container">
+						<h2>Angshuman Sarma</h2>
+						<p>Final Year Undergraduate, Computer Science, NIT SILCHAR</p>
+						<p>Email : <a href="mailto:joe@example.com?subject=feedback">angshumansarma_ug@cse.nits.ac.in</a>
+						</p>
+						<button class="button">View</button>
+					</div>
+				</div>
+			</div>
+
+      <div class="column">
+				<div class="card">
+					<img src="{% static 'mahaboob.jpeg' %}" style="border-radius: 50%; height: 120px; width: 120px;">
+					<div class="container">
+						<h2>Mahaboob Shariff</h2>
+						<p>Final Year Undergraduate, Computer Science, NIT SILCHAR</p>
+						<p>Email : <a href="mailto:joe@example.com?subject=feedback">syedmshariff_ug@cse.nits.ac.in</a>
+						</p>
+						<button class="button">View</button>
+					</div>
+				</div>
+			</div>
+
+      <div class="column">
+				<div class="card">
+					<img src="{% static 'nikita.jpeg' %}" style="border-radius: 50%; height: 120px; width: 120px;">
+					<div class="container">
+						<h2>Nikita Saikia</h2>
+						<p>Final Year Undergraduate, Electrical Engineering, NIT SILCHAR</p>
+						<p>Email : <a href="mailto:joe@example.com?subject=feedback">nikita_ug@ee.nits.ac.in</a>
+						</p>
+						<button class="button">View</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		</center>
+</body>
+
+</html>

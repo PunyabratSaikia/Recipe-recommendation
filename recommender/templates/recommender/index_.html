@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SidebarDesign</title>
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5916fb42ce.js" crossorigin="anonymous"></script>
+    <style>
+    a:link {
+      color: rgb(96, 41, 151);
+      background-color: transparent;
+      text-decoration: none;
+    }
+    
+    a:visited {
+      color: rgb(252, 250, 251);
+      background-color: transparent;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      color: white
+      background-color: transparent;
+      text-decoration: underline;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class = "logo"><img src="https://upload.wikimedia.org/wikipedia/en/c/c6/NIT_Silchar_logo.png" alt=""></div>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+        <ul>
+          <li><a href = "{% url 'home' %}">Home</a></li>
+            <li>Research-Paper</li>
+            <li><a href = "{% url 'members' %}">Meet the team</a></li>
+        </ul>
+    </nav>
+
+    <div class = "container">
+      <div class = "Recommendation">
+          <div class="recs">
+            <figure>
+                <img class=scaled src="{{ uploaded_file_url }}"
+                  alt="">
+                <figcaption>Recipe-name : {{ title}}</figcaption>
+              </figure>
+          </div>
+      </div>
+
+        <ul class='ingridients' style="padding-left: 0rem;">
+          <li class = 'ingridients_items'><strong>INGREDIENTS</strong></li>
+          {% for ingre in ingredients %}
+          <li class = 'ingridients_items'>{{ ingre }}</li>
+          {% endfor %}
+        </ul>
+
+        <ul class='instructions' style="padding-left: 0rem;">
+          <li class = 'instructions_items'><strong>INSTRUCTIONS</strong></li>
+          {% for inst in instruction %}
+          <li class = 'instructions_items'>{{ inst }}</li>
+          {% endfor %}
+        </ul>
+
+          <div class = "Recommendation">
+            <li class = 'instructions_items'><strong>SIMILAR - RECIPES</strong></li>
+            {% for link,dish in links %}
+              <div class="recs">
+                <figure>
+                    <img class=scaled src="{{ link }}"
+                      alt="">
+                    <figcaption>{{ dish }}</figcaption>
+                  </figure>
+              </div>
+            {% endfor %}
+          </div>
+    </div>
+    <footer>
+
+    </footer>
+    <script src="{% static 'app.js' %}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

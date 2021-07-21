@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+  <div class="row">
+    <div class="column">
+      <h2>Recipe-name : {{ title }} </h2>
+      <img src = "{{ uploaded_file_url }}" width="300" height="300">
+    </div>
+    <div class="column">
+      <h2>Ingredients</h2>
+      {% for ingre in ingredients %}
+          {{ingre }}  <br />
+      {% endfor %}
+    </div>
+    <div class="column">
+      <h2>Instructions</h2>
+      {% for ins in instruction %}
+          {{ins}}  <br />
+      {% endfor %}
+    </div>
+    <div class="column">
+      <h2>Similar Dishes</h2>
+      {% for dish in suggestions %}
+          {{ dish }}  <br />
+      {% endfor %}
+    </div>
+  </div>
+
+</body>
+</html>
